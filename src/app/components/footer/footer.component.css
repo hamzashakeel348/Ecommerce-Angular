@@ -1,0 +1,10 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+ul {
+  list-style: none;
+  color: #5c626e;
+  font-weight: 500;
+}
+li:hover {
+  cursor: pointer;
+  color: #207dff;
+}
