@@ -12,6 +12,7 @@ import { FeatureComponent } from './components/feature/feature.component';
 import { ProductdisplayComponent } from './components/productdisplay/productdisplay.component';
 import { Banner2Component } from './components/banner2/banner2.component';
 import { CollectionComponent } from './components/collection/collection.component';
+import { MapComponent } from './components/map/map.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { CollectionComponent } from './components/collection/collection.componen
     ProductdisplayComponent,
     Banner2Component,
     CollectionComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,
