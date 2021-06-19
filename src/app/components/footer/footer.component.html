@@ -1,9 +1,7 @@
-<div class="container" style="padding-bottom: 3em;">
+<div class="container" style="padding-bottom: 3em; margin-top: 20px">
   <div class="row align-items-start">
     <div class="col">
-      <h4 style="font-size: 1.2rem;">
-        About us
-      </h4>
+      <h4 style="font-size: 1.2rem">About us</h4>
       <p
         style="
           width: 70%;
@@ -22,48 +20,50 @@
         <input
           type="email"
           class="form-control"
-          style="width: 60%;"
+          style="width: 60%"
           placeholder="Feedback"
         />
       </form>
+      <br />
+      <br />
+      <br />
+      <h4>Share Link on Social Media</h4>
+      <share-buttons
+        [theme]="'material-dark'"
+        [include]="['facebook', 'whatsapp', 'linkedin', 'copy']"
+        [show]="4"
+        [size]="20"
+        [url]="'https://www.youtube.com/watch?v=ngSNGrx4TnA'"
+        [autoSetMeta]="false"
+      ></share-buttons>
     </div>
     <div class="col">
-      <h4 style="font-size: 1.2rem;">Quick Links</h4>
+      <h4 style="font-size: 1.2rem">Quick Links</h4>
       <div class="row align-items-start">
-        <div class="col" style="margin-right: 1em;">
-          <ul style="margin-left: -2em; margin-top: 1em;">
-            <li style="margin-bottom: 0.7em;">Sell online</li>
-            <li style="margin-bottom: 0.7em;">Features</li>
-            <li style="margin-bottom: 0.7em;">Shopping Cart</li>
-            <li style="margin-bottom: 0.7em;">Store builder</li>
+        <div class="col" style="margin-right: 1em">
+          <ul style="margin-left: -2em; margin-top: 1em">
+            <li style="margin-bottom: 0.7em">Sell online</li>
+            <li style="margin-bottom: 0.7em">Features</li>
+            <li style="margin-bottom: 0.7em">Shopping Cart</li>
+            <li style="margin-bottom: 0.7em">Store builder</li>
+            <li style="margin-bottom: 0.7em">Point of Sale</li>
+            <li style="margin-bottom: 0.7em">Software</li>
           </ul>
         </div>
-        <div class="col" style="margin-right: 1em;">
-          <ul style="margin-left: -2em; margin-top: 1em;">
-            <li style="margin-bottom: 0.6em;">Mobile</li>
-            <li style="margin-bottom: 0.7em;">Ecommerce</li>
-            <li style="margin-bottom: 0.7em;">Dropshipping</li>
-            <li style="margin-bottom: 0.7em;">Website</li>
-            <li style="margin-bottom: 0.7em;">Develpoment</li>
-          </ul>
-        </div>
-        <div class="col">
-          <ul style="margin-left: -2em; margin-top: 1em;">
-            <li style="margin-bottom: 0.7em;">Point of Sale</li>
-            <li style="margin-bottom: 0.7em;">Hardware</li>
-            <li style="margin-bottom: 0.7em;">Software</li>
+        <div class="col" style="margin-right: 1em">
+          <ul style="margin-left: -2em; margin-top: 1em">
+            <li style="margin-bottom: 0.6em">Mobile</li>
+            <li style="margin-bottom: 0.7em">Ecommerce</li>
+            <li style="margin-bottom: 0.7em">Dropshipping</li>
+            <li style="margin-bottom: 0.7em">Website</li>
+            <li style="margin-bottom: 0.7em">Develpoment</li>
+            <li style="margin-bottom: 0.7em">Hardware</li>
           </ul>
         </div>
       </div>
     </div>
     <div class="col">
-      <!-- <h4 style="font-size: 1.2rem;">Contact Info</h4>
-      <ul style="margin-left: -1.5em; font-size: 1.2em;">
-        <li style="margin: 1em 0;">House no 587 M block Sabzazar Lahore.</li>
-        <li style="margin-bottom: 1em;">0322-4943476</li>
-        <li>hamzashakeel348@gmail.com</li>
-      </ul> -->
-      <app-login></app-login>
+      <app-googleFBlogin></app-googleFBlogin>
     </div>
   </div>
 </div>

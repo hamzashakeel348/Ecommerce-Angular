@@ -1,0 +1,44 @@
+<div class="main" *ngIf="!user">
+  <form
+    class="form"
+    #simpleForm="ngForm"
+    (ngSubmit)="getValues(simpleForm.value)"
+  >
+    <h2 style="margin-top: 10px">Not signed in</h2>
+    <input
+      type="email"
+      name="username"
+      value="email"
+      ngModel
+      placeholder="Email"
+      class="input"
+    />
+
+    <input
+      type="password"
+      name="password"
+      value="password"
+      ngModel
+      class="input"
+      placeholder="Password"
+    />
+    <!-- End Btn -->
+
+    <button type="submit" class="btn">Login</button>
+  </form>
+  <div class="buttons_container">
+    <button type="button" (click)="loginWithFacebook()" class="continue_button">
+      <img src="https://svgshare.com/i/YJS.svg" class="img" />
+    </button>
+    <button (click)="signInWithGoogle()" class="continue_button">
+      <img src="https://svgshare.com/i/YGv.svg" class="img" />
+    </button>
+  </div>
+</div>
+<div *ngIf="user" class="main1">
+  <img class="profile_image" src="{{ user.photoUrl }}" />
+  <br />
+  <h4>{{ user.name }}</h4>
+  <p style="margin-top: -5px">{{ user.email }}</p>
+  <button type="button" (click)="signOut()" class="sign_out">Sign Out</button>
+</div>

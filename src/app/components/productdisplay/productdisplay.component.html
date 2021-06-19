@@ -1,68 +1,70 @@
 <div class="container">
-  <div class="row align-items-start" style="border-left: 1px solid #eee;">
-    <div
-      class="col"
-      style="
-        text-align: center;
-        border-right: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-      "
-    >
-      <img
-        style="width: 15em; margin-bottom: -6em;"
-        src="https://www.dropbox.com/s/i2pd85w2kdbhb5n/1.webp?raw=1"
-      />
-      <span style="margin-top: -6em;">
-        <h2>The Shoe</h2>
-        <p style="color: gray;">Summer Collection</p>
-        <h3>$9.50</h3>
-      </span>
-    </div>
-    <div
-      class="col"
-      style="
-        text-align: center;
-        border-right: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-      "
-    >
-      <img
-        style="width: 15em; margin-bottom: -6em;"
-        src="https://www.dropbox.com/s/y0juuizirnw82ge/2.webp?raw=1"
-      />
-      <span style="margin-top: -6em;">
-        <h2>Marc Jacobs Bag</h2>
-        <p style="color: gray;">Summer Collection</p>
-        <h3>
-          <span>$9.50</span>
-          <span
-            style="
-              margin-left: 0.5em;
-              color: #adb5bd;
-              text-decoration: line-through;
-            "
-            >$30</span
-          >
-        </h3>
-      </span>
-    </div>
-    <div
-      class="col"
-      style="
-        text-align: center;
-        border-right: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-      "
-    >
-      <img
-        style="width: 15em; margin-bottom: -6em;"
-        src="https://www.dropbox.com/s/56px247j6q8bp42/3.webp?raw=1"
-      />
-      <span style="margin-top: -6em;">
-        <h2>The Belt</h2>
-        <p style="color: gray;">Summer Collection</p>
-        <h3>$9.50</h3>
+  <div class="wrap_container">
+    <div *ngFor="let product of products" class="single_product">
+      <img style="width: 15em; margin-bottom: -7em" src="{{ product.url }}" />
+      <span style="margin-top: -6em">
+        <h2>{{ product.text1 }}</h2>
+        <p style="color: gray">{{ product.text2 }}</p>
+        <h3>{{ product.text3 }}</h3>
       </span>
     </div>
   </div>
+  <br />
+  <br />
+  <h1>Add Product</h1>
+  <form #f="ngForm" (ngSubmit)="data(f)" style="border: gray">
+    <div class="single_row">
+      <div class="input_style">
+        <input
+          type="text"
+          required
+          ngModel
+          name="text1"
+          name="text1"
+          class="input"
+          id="text1"
+          placeholder="Enter Product Name"
+        />
+      </div>
+      <div class="input_style_left">
+        <input
+          type="text"
+          required
+          ngModel
+          name="text2"
+          name="text2"
+          class="input"
+          id="text2"
+          placeholder="Enter Collection Name"
+        />
+      </div>
+    </div>
+    <div class="single_row">
+      <div class="input_style">
+        <input
+          type="text"
+          required
+          ngModel
+          name="text3"
+          name="text3"
+          class="input"
+          id="text3"
+          placeholder="Enter Price"
+        />
+      </div>
+      <div class="input_style_left">
+        <input
+          type="text"
+          required
+          ngModel
+          name="url"
+          name="url"
+          class="input"
+          id="url"
+          placeholder="Enter URL"
+        />
+      </div>
+    </div>
+    <button class="btndd" type="submit">Add Product</button>
+  </form>
 </div>
