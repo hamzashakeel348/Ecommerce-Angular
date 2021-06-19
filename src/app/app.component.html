@@ -7,21 +7,29 @@
       </div>
       <app-header></app-header> <br />
 
-      <app-feature></app-feature> <br />
+      <app-feature
+        [t1]="text1"
+        [t2]="text2"
+        [original]="original1"
+        [discount]="discount1"
+        [url]="url1"
+      ></app-feature>
+      <br />
 
       <app-productdisplay></app-productdisplay>
-      <app-productdisplay></app-productdisplay> <br />
+      <br />
+      <br />
       <br />
       <br />
 
-      <app-banner></app-banner>
+      <app-feature
+        [t1]="text1"
+        [t2]="text2"
+        [original]="original2"
+        [discount]="discount2"
+        [url]="url2"
+      ></app-feature>
       <br />
-      <br />
-      <app-collection></app-collection>
-
-      <br />
-
-      <app-banner2></app-banner2>
       <br />
       <app-map></app-map>
       <br />

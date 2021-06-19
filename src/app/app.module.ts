@@ -1,37 +1,72 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { AppRoutingModule } from "./app-routing.module";
+import { FormsModule } from "@angular/forms";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
-import { HeaderComponent } from './components/header/header.component';
-import { BannerComponent } from './components/banner/banner.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { LoginComponent } from './components/login/login.component';
-import { FeatureComponent } from './components/feature/feature.component';
-import { ProductdisplayComponent } from './components/productdisplay/productdisplay.component';
-import { Banner2Component } from './components/banner2/banner2.component';
-import { CollectionComponent } from './components/collection/collection.component';
-import { MapComponent } from './components/map/map.component';
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from "angularx-social-login";
+import {
+  FacebookLoginProvider,
+  GoogleLoginProvider,
+} from "angularx-social-login";
+import { ReactiveFormsModule } from "@angular/forms";
+
+import { AppComponent } from "./app.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { FeatureComponent } from "./components/feature/feature.component";
+import { CollectionComponent } from "./components/collection/collection.component";
+import { ProductdisplayComponent } from "./components/productdisplay/productdisplay.component";
+import { MapComponent } from "./components/map/map.component";
+import { GoogleFBloginComponent } from "./components/googleFBlogin/googleFBlogin.component";
+import { ShareButtonsModule } from "ngx-sharebuttons/buttons";
+import { ShareIconsModule } from "ngx-sharebuttons/icons";
+
+const google_CLIENT_ID =
+  "554619237061-2j2m9uhnufa8gl0qon5oqohq83lgjqsr.apps.googleusercontent.com";
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BannerComponent,
     FooterComponent,
-    LoginComponent,
+    GoogleFBloginComponent,
     FeatureComponent,
     ProductdisplayComponent,
-    Banner2Component,
     CollectionComponent,
     MapComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    SocialLoginModule,
+    ShareButtonsModule.withConfig({
+      debug: true,
+    }),
+    ShareIconsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: "SocialAuthServiceConfig",
+      useValue: {
+        autoLogin: true,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(google_CLIENT_ID),
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider("518606282598642"),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
